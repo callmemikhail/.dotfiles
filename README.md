@@ -1,8 +1,9 @@
 # .dotfiles
 dwm &amp;&amp; pathes, slstatus &amp;&amp; config, dmenu &amp;&amp; theme, allacritty &amp;&amp; theme, vim &amp;&amp; config
 
-# .dotfiles
-dwm &amp;&amp; pathes, slstatus &amp;&amp; config, dmenu &amp;&amp; theme, allacritty &amp;&amp; theme, vim &amp;&amp; config
+```text
+WARNING: nvim conf not full!
+```
 
 ## dwm config
 ```text
