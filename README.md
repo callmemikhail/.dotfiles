@@ -1,48 +1,27 @@
-# .dotfiles
-dwm &amp;&amp; pathes, slstatus &amp;&amp; config, dmenu &amp;&amp; theme, allacritty &amp;&amp; theme, vim &amp;&amp; config
+# dotfiles
+My configuration of dwm, nvim, slstatus, and dmenu is an ongoing attempt to achieve maximum comfort and productivity in my workflow.
 
 ```text
 WARNING: nvim conf not full!
 ```
 
-## dwm config
-```text
-├── config.h
-├── config.mk
-├── drw.c
-├── drw.h
-├── drw.o
-├── dwm
-├── dwm.1
-├── dwm.c
-├── dwm.o
-├── dwm.png
-├── exitdwm.c
-├── LICENSE
-├── Makefile
-├── patches
-│   ├── dwm-alwayscenter-20200625-f04cac6.diff
-│   ├── dwm-attachbottom-6.3.diff
-│   ├── dwm-colorbar-6.2.diff
-│   ├── dwm-cool-autostart-6.2.diff
-│   ├── dwm-exitmenu-6.3.diff
-│   ├── dwm-movekeyboard-6.4.diff
-│   ├── dwm-noborder-6.2.diff
-│   ├── dwm-pertag-6.2.diff
-│   ├── dwm-preserveonrestart-6.3.diff
-│   ├── dwm-resizehere-20230824-e81f17d.diff
-│   ├── dwm-restartsig-20180523-6.2.diff
-│   ├── dwm-rotatestack-20161021-ab9571b.diff
-│   ├── dwm-steam-6.2.diff
-│   └── dwm-systray-20230922-9f88553.diff
-├── README
-├── transient.c
-├── util.c
-├── util.h
-└── util.o
-```
+## content
+- [dwm](#dwm)
+- [nvim](nvim)
+- [To do](#to-do)
 
-## nvim config
+## tools
+- [Dwm](https://dwm.suckless.org/)
+- [Nvim](https://neovim.io/)
+- ...
+
+## to-do
+```text
+    nvim lsp setup 
+    nvim refactor custom/plug/plugins.lua 
+    dwm change colors
+```
+## nvim
 ```text
 ├── init.lua
 ├── lua
@@ -64,3 +43,30 @@ WARNING: nvim conf not full!
 │       └── modebindings.lua
 └── plugin
     └── packer_compiled.lua
+```
+
+
+## dwm 
+```text
+├── config.h
+├── config.mk
+├── drw.c
+├── dwm
+├── exitdwm.c
+├── Makefile
+├── patches
+│   ├── dwm-alwayscenter-20200625-f04cac6.diff
+│   ├── dwm-attachbottom-6.3.diff
+│   ├── dwm-colorbar-6.2.diff
+│   ├── dwm-cool-autostart-6.2.diff
+│   ├── dwm-exitmenu-6.3.diff
+│   ├── dwm-movekeyboard-6.4.diff
+│   ├── dwm-noborder-6.2.diff
+│   ├── dwm-pertag-6.2.diff
+│   ├── dwm-preserveonrestart-6.3.diff
+│   ├── dwm-resizehere-20230824-e81f17d.diff
+│   ├── dwm-restartsig-20180523-6.2.diff
+│   ├── dwm-rotatestack-20161021-ab9571b.diff
+│   ├── dwm-steam-6.2.diff
+│   └── dwm-systray-20230922-9f88553.diff
+```
