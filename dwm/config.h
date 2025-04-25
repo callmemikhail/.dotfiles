@@ -36,8 +36,6 @@ static const Rule rules[] = {
     { "Steam",     NULL,	  NULL,       1 << 6,	    0, 		 -1 },
     { "steam",     NULL,	  NULL,       1 << 6,	    0, 		 -1 },
     { "discord",   NULL,	  NULL,       1 << 7,	    0, 		 -1 },
-    { "vscodium",  NULL,	  NULL,       1 << 3,	    0, 		 -1 },
-    { "VSCodium",  NULL,	  NULL,       1 << 3,	    0, 		 -1 },
     { "steamwebhelper",NULL,  NULL,       1 << 6,	    0, 		 -1 },
     { "TelegramDesktop",NULL, NULL,       1 << 8,	    0, 		 -1 },
 };
@@ -78,10 +76,10 @@ static const char *browsercmd[]        = { "librewolf", NULL };
 static const char *termcmd[]           = { "alacritty" , NULL };
 static const char *flameshot[]         = { "flameshot", "gui", NULL };
 static const char *telegram[]          = { "telegram-desktop", NULL};
-static const char *upvol[]   		   = { "amixer", "set", "Master", "10%+", NULL };
-static const char *downvol[] 		   = { "amixer", "set", "Master", "10%-", NULL };
-static const char *mutevol[] 		   = { "pactl", "set-sink-mute", "@DEFAULT_SKINK@", "toggle", NULL };
-static const char *dmenucmd[]		   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_cyan, "-nf", col_bgray, "-sb", col_bgray, "-sf", col_cyan, NULL };
+static const char *upvol[]             = { "amixer", "set", "Master", "10%+", NULL };
+static const char *downvol[]           = { "amixer", "set", "Master", "10%-", NULL };
+static const char *mutevol[]           = { "pactl", "set-sink-mute", "@DEFAULT_SKINK@", "toggle", NULL };
+static const char *dmenucmd[]          = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_cyan, "-nf", col_bgray, "-sb", col_bgray, "-sf", col_cyan, NULL };
 
 #include "exitdwm.c"
 static const Key keys[] = {
