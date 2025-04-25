@@ -37,10 +37,8 @@ dwm &amp;&amp; pathes, slstatus &amp;&amp; config, dmenu &amp;&amp; theme, allac
 ├── util.h
 └── util.o
 
-
 ## nvim config
- 
-```text
+
 .
 ├── init.lua
 ├── lua
