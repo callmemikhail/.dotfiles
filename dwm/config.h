@@ -86,16 +86,16 @@ static const char *dmenucmd[]			= { "dmenu_run", "-m", dmenumon, "-fn", dmenufon
 #include "exitdwm.c"
 static const Key keys[] = {
     /* modifier                     key        function        argument */
-    { MODKEY,						XK_b,      togglebar,      {0} }, 
-    { MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
-    { MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
-    { MODKEY,                       XK_j,      focusstack,     {.i = +1 } }, 
-    { MODKEY,                       XK_k,      focusstack,     {.i = -1 } }, 
-    { MODKEY,                       XK_i,      incnmaster,     {.i = +1 } }, 
-    { MODKEY,                       XK_g,      incnmaster,     {.i = -1 } },
-    { MODKEY,						XK_h,      setmfact,       {.f = -0.05} },
-    { MODKEY,           	        XK_l,      setmfact,       {.f = +0.05} },
-    { MODKEY|ShiftMask,				XK_v, 	   spawn,			{.v = vifm} }, 
+    { MODKEY,						XK_b,      togglebar,       {0} }, 
+    { MODKEY|ShiftMask,             XK_j,      rotatestack,     {.i = +1 } },
+    { MODKEY|ShiftMask,             XK_k,      rotatestack,     {.i = -1 } },
+    { MODKEY,                       XK_j,      focusstack,      {.i = +1 } }, 
+    { MODKEY,                       XK_k,      focusstack,      {.i = -1 } }, 
+    { MODKEY,                       XK_i,      incnmaster,      {.i = +1 } }, 
+    { MODKEY,                       XK_g,      incnmaster,      {.i = -1 } },
+    { MODKEY,						XK_h,      setmfact,        {.f = -0.05} },
+    { MODKEY,           	        XK_l,      setmfact,        {.f = +0.05} },
+    { MODKEY|ShiftMask,				XK_v, 	   spawn,           {.v = vifm} }, 
     { MODKEY|ShiftMask,				XK_s, 	   spawn,			{.v = steam} }, 
     { MODKEY|ShiftMask,				XK_t,	   spawn,			{.v = telegram} }, 
     { MODKEY,						XK_r,      spawn,			{.v = termcmd } }, 
@@ -104,41 +104,41 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,				XK_o, 	   spawn,			{.v = obs_studio} }, 
     { MODKEY|ShiftMask,				XK_d,      spawn,			{.v = discordcmd } },
     { MODKEY|ShiftMask,				XK_f,      spawn,			{.v = browsercmd } }, 
-    //	{ MODKEY|ShiftMask,				XK_b,      spawn,          SHCMD("xdotool type $(grep -v '^#' ~/.config/snippets | dmenu -i -l 50 | cut -d' ' -f1)") },
-    //	{ MODKEY|ShiftMask,				XK_x,      spawn,          SHCMD("awk -i inplace -v rmv=\"$(grep -v '^#' ~/.config/snippets | dmenu -i -l 50 | cut -d' ' -f1)\" '!index($0,rmv)' ~/.config/snippets") },
     { MODKEY,                       XK_Return, zoom,			{0} },
     { MODKEY,                       XK_Tab,    view,           	{0} },
     { MODKEY,						XK_w,      killclient,     	{0} },
     { MODKEY,						XK_t,      setlayout,      	{.v = &layouts[0]} },
     { MODKEY,						XK_f,      setlayout,      	{.v = &layouts[1]} },
     { MODKEY,						XK_m,      setlayout,      	{.v = &layouts[2]} },
-    //	{ MODKEY,						XK_c,      setlayout,      	{.v = &layouts[3]} },
     { MODKEY,                       XK_space,  setlayout,      	{0} },
     { MODKEY|ShiftMask,             XK_space,  togglefloating, 	{0} },
     { MODKEY,                       XK_0,      view,           	{.ui = ~0 } },
     { MODKEY|ShiftMask,             XK_0,      tag,            	{.ui = ~0 } },
+    //	{ MODKEY,						XK_c,      setlayout,      	{.v = &layouts[3]} },
     //	{ MODKEY,                       XK_h,  	   focusmon,       	{.i = +1 } },
     // 	{ MODKEY,                       XK_l,  	   focusmon,       	{.i = -1 } },
     //	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         	{.i = +1 } },
     //	{ MODKEY|ShiftMask,             XK_period, tagmon,         	{.i = -1 } },
-    { MODKEY|ControlMask,			XK_l,		movekeyboard_x,		{.i = 20}},
-    { MODKEY|ControlMask,			XK_j,	 	movekeyboard_y,     {.i = 20}},
-    { MODKEY|ControlMask,			XK_h,	 	movekeyboard_x,		{.i = -20}},
-    { MODKEY|ControlMask,			XK_k,	 	movekeyboard_y,     {.i = -20}},
+    //	{ MODKEY|ShiftMask,				XK_b,      spawn,          SHCMD("xdotool type $(grep -v '^#' ~/.config/snippets | dmenu -i -l 50 | cut -d' ' -f1)") },
+    //	{ MODKEY|ShiftMask,				XK_x,      spawn,          SHCMD("awk -i inplace -v rmv=\"$(grep -v '^#' ~/.config/snippets | dmenu -i -l 50 | cut -d' ' -f1)\" '!index($0,rmv)' ~/.config/snippets") },
+    { MODKEY|ControlMask,			XK_l,		movekeyboard_x, {.i = 20}},
+    { MODKEY|ControlMask,			XK_j,	 	movekeyboard_y, {.i = 20}},
+    { MODKEY|ControlMask,			XK_h,	 	movekeyboard_x, {.i = -20}},
+    { MODKEY|ControlMask,			XK_k,	 	movekeyboard_y, {.i = -20}},
     TAGKEYS(                        XK_1,                      0)
-        TAGKEYS(                        XK_2,                      1)
-        TAGKEYS(                        XK_3,                      2) 
-        TAGKEYS(                        XK_4,                      3)
-        TAGKEYS(                        XK_5,                      4)
-        TAGKEYS(                        XK_6,                      5)
-        TAGKEYS(                        XK_7,                      6)
-        TAGKEYS(                        XK_8,                      7)
-        TAGKEYS(                        XK_9,                      8)
-        { MODKEY|ShiftMask|ControlMask,	XK_q,      exitdwm,        {0} },
-        { MODKEY|ShiftMask|ControlMask,	XK_Escape, quit,           {0} }, 
-        { MODKEY|ShiftMask,             XK_Up,     spawn,          {.v = upvol   } },
-        { MODKEY|ShiftMask,             XK_Down,   spawn,          {.v = downvol } },
-        { MODKEY|ShiftMask,		XK_m,      spawn,				   {.v = mutevol } },
+    TAGKEYS(                        XK_2,                      1)
+    TAGKEYS(                        XK_3,                      2) 
+    TAGKEYS(                        XK_4,                      3)
+    TAGKEYS(                        XK_5,                      4)
+    TAGKEYS(                        XK_6,                      5)
+    TAGKEYS(                        XK_7,                      6)
+    TAGKEYS(                        XK_8,                      7)
+    TAGKEYS(                        XK_9,                      8)
+    { MODKEY|ShiftMask|ControlMask,	XK_q,      exitdwm,        {0} },
+    { MODKEY|ShiftMask|ControlMask,	XK_Escape, quit,           {0} }, 
+    { MODKEY|ShiftMask,             XK_Up,     spawn,          {.v = upvol   } },
+    { MODKEY|ShiftMask,             XK_Down,   spawn,          {.v = downvol } },
+    { MODKEY|ShiftMask,		XK_m,      spawn,				   {.v = mutevol } },
 };
 
 /* button definitions */
