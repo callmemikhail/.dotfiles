@@ -15,13 +15,13 @@ static const char dmenufont[]       = "monospace:size=8";
 
 static const char *colors[][3]      = {
     /*               fg         bg         border   */
-    [SchemeNorm]    = { col_gray3, col_gray1,col_gray2 },
-    [SchemeSel]     = { col_gray4, col_cyan, col_bgray  },
-    [SchemeStatus]  = { col_gray3, col_gray1, "#000000" }, // Statusbar right {text,background,not used but cannot be empty}
-             [SchemeTagsSel] = { col_cyan, col_bgray,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
-             [SchemeTagsNorm]= { col_gray4, col_cyan,  "#000000" }, // Tagbar left unselected {text,background,not used but cannot be empty}
-             [SchemeInfoSel] = { col_gray4, col_cyan,  "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
-             [SchemeInfoNorm]= { col_gray3, col_gray1, "#000000" }, // infobar middle  unselected {text,background,not used but cannot be empty}
+            [SchemeNorm]    = { col_gray3, col_gray1,col_gray2 },
+            [SchemeSel]     = { col_gray4, col_cyan, col_bgray  },
+            [SchemeStatus]  = { col_gray3, col_gray1, "#000000" }, // Statusbar right {text,background,not used but cannot be empty}
+            [SchemeTagsSel] = { col_cyan, col_bgray,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
+            [SchemeTagsNorm]= { col_gray4, col_cyan,  "#000000" }, // Tagbar left unselected {text,background,not used but cannot be empty}
+            [SchemeInfoSel] = { col_gray4, col_cyan,  "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
+            [SchemeInfoNorm]= { col_gray3, col_gray1, "#000000" }, // infobar middle  unselected {text,background,not used but cannot be empty}
 };
 
 /* tagging */
@@ -70,18 +70,18 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 
-static const char *obs_studio[]			= { "obs", NULL };
-static const char *vifm[]				= { "vifm", NULL };
-static const char *steam[]				= { "steam", NULL };
-static const char *discordcmd[]  		= { "discord", NULL };
-static const char *browsercmd[]  		= { "librewolf", NULL };
-static const char *termcmd[]  			= { "alacritty" , NULL };
-static const char *flameshot[] 			= { "flameshot", "gui", NULL };
-static const char *telegram[]			= { "telegram-desktop", NULL};
-static const char *upvol[]   			= { "amixer", "set", "Master", "10%+", NULL };
-static const char *downvol[] 			= { "amixer", "set", "Master", "10%-", NULL };
-static const char *mutevol[] 			= { "pactl", "set-sink-mute", "@DEFAULT_SKINK@", "toggle", NULL };
-static const char *dmenucmd[]			= { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_cyan, "-nf", col_bgray, "-sb", col_bgray, "-sf", col_cyan, NULL };
+static const char *obs_studio[]        = { "obs", NULL };
+static const char *vifm[]              = { "vifm", NULL };
+static const char *steam[]             = { "steam", NULL };
+static const char *discordcmd[]        = { "discord", NULL };
+static const char *browsercmd[]        = { "librewolf", NULL };
+static const char *termcmd[]           = { "alacritty" , NULL };
+static const char *flameshot[]         = { "flameshot", "gui", NULL };
+static const char *telegram[]          = { "telegram-desktop", NULL};
+static const char *upvol[]   		   = { "amixer", "set", "Master", "10%+", NULL };
+static const char *downvol[] 		   = { "amixer", "set", "Master", "10%-", NULL };
+static const char *mutevol[] 		   = { "pactl", "set-sink-mute", "@DEFAULT_SKINK@", "toggle", NULL };
+static const char *dmenucmd[]		   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_cyan, "-nf", col_bgray, "-sb", col_bgray, "-sf", col_cyan, NULL };
 
 #include "exitdwm.c"
 static const Key keys[] = {
