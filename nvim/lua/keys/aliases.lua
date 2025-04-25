@@ -2,6 +2,8 @@
 --[Key mapping]--
     vim.g.mapleader = " " -- changing leader key from \ to <Space>
     opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
+    --[General]--
+    bind_key("n", "<Leader>Q", ":qa!<CR>", "Force full nvim exit")
 
     --[Moves]--
     bind_key("n", "<C-u>", "<C-u>zz", "scroll half slide up and move cursor to the mid")

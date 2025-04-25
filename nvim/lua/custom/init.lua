@@ -1,7 +1,7 @@
 --[Custom]--
 
-----Plugins---
+----[Plugins]---
     require('custom.plug.plugins')
     require('custom.plug.plugconf')
-----Colorscheme---
+----[Colorscheme]---
     require('custom.colorscheme.current')
