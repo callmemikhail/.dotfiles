@@ -69,4 +69,5 @@ WARNING: nvim conf not full!
 │   ├── dwm-rotatestack-20161021-ab9571b.diff
 │   ├── dwm-steam-6.2.diff
 │   └── dwm-systray-20230922-9f88553.diff
+└── . 
 ```
