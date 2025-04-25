@@ -1,6 +1,9 @@
 # .dotfiles
 dwm &amp;&amp; pathes, slstatus &amp;&amp; config, dmenu &amp;&amp; theme, allacritty &amp;&amp; theme, vim &amp;&amp; config
 
+# .dotfiles
+dwm &amp;&amp; pathes, slstatus &amp;&amp; config, dmenu &amp;&amp; theme, allacritty &amp;&amp; theme, vim &amp;&amp; config
+
 ## dwm config
 ```text
 ├── config.h
@@ -36,28 +39,27 @@ dwm &amp;&amp; pathes, slstatus &amp;&amp; config, dmenu &amp;&amp; theme, allac
 ├── util.c
 ├── util.h
 └── util.o
+```
 
 ## nvim config
-
-.
+```text
 ├── init.lua
 ├── lua
-│   ├── core
-│   │   ├── filesettings.lua
-│   │   ├── general.lua
-│   │   └── vars.lua
-│   ├── custom
-│   │   ├── colorscheme
-│   │   │   ├── current.lua
-│   │   │   └── themes
-│   │   ├── init.lua
-│   │   └── plug
-│   │       ├── conf
-│   │       ├── plugconf.lua
-│   │       └── plugins.lua
-│   └── keys
-│       ├── aliases.lua
-│       └── modebindings.lua
+│   ├── core
+│   │   ├── filesettings.lua
+│   │   ├── general.lua
+│   │   └── vars.lua
+│   ├── custom
+│   │   ├── colorscheme
+│   │   │   ├── current.lua
+│   │   │   └── themes
+│   │   ├── init.lua
+│   │   └── plug
+│   │       ├── conf
+│   │       ├── plugconf.lua
+│   │       └── plugins.lua
+│   └── keys
+│       ├── aliases.lua
+│       └── modebindings.lua
 └── plugin
     └── packer_compiled.lua
-
