@@ -82,7 +82,7 @@ static const char *flameshot[]         = { "flameshot", "gui", NULL };
 static const char *telegram[]          = { "telegram-desktop", NULL};
 static const char *upvol[]             = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+10%", NULL };
 static const char *downvol[]           = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-10%", NULL };
-static const char *mutevol[]           = { "pactl", "set-sink-mute", "@DEFAULT_SKINK@", "toggle", NULL };
+static const char *mutevol[]           = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
 static const char *dmenucmd[]          = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_cyan, "-nf", col_bgray, "-sb", col_bgray, "-sf", col_cyan, NULL };
 
 #include "exitdwm.c"
@@ -165,7 +165,6 @@ static const Button buttons[] = {
 
 // autostart
 static const char *const autostart[] = {
-    "slstatus", NULL,
     "telegram-desktop", NULL,
     NULL
 };
