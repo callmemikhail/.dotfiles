@@ -1,0 +1,5 @@
+import = [
+  "/usr/lib/node_modules/alacritty-themes/themes/Ashes.dark.toml"
+]
+
+[genera

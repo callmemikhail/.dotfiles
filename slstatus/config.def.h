@@ -65,9 +65,5 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ keymap,			" [%s] |",					NULL },
-	{ ram_perc, 		" ram: %s% |",		 		NULL },
-	{ cpu_perc, 		" cpu: %s% |",				NULL },
-    { run_command,      " vol: %s |",                "pactl get-sink-volume @DEFAULT_SINK@ | grep -oE '[0-9]+%' | head -n1" },
-	{ datetime, 		" %s",                      "[%a], [%b %d], [[%T], [%F]]" },
+	{ datetime, "%s",           "%F %T" },
 };

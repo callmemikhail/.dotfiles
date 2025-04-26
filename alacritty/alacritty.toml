@@ -1,0 +1,9 @@
+[general]
+import = [
+    #change path
+  "/home/user/.config/alacritty/themes/Ashes.dark.toml"
+]
+[keyboard]
+bindings = [
+  { key = "V", mods = "Alt", action = "ToggleViMode" }
+]
