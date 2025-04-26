@@ -75,7 +75,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *obs_studio[]        = { "obs", NULL };
 static const char *steam[]             = { "steam", NULL };
 static const char *discordcmd[]        = { "discord", NULL };
-static const char *browsercmd[]        = { "librewolf", NULL };
+static const char *browsercmd[]        = { BROWSER,  NULL };
 static const char *termcmd[]           = { TERMINAL , NULL };
 static const char *vifm[]              = { TERMINAL, "-e", "vifm" };
 static const char *flameshot[]         = { "flameshot", "gui", NULL };
@@ -136,11 +136,11 @@ static const Key keys[] = {
     TAGKEYS(                        XK_7,                      6)
     TAGKEYS(                        XK_8,                      7)
     TAGKEYS(                        XK_9,                      8)
-    { MODKEY|ShiftMask|ControlMask,	XK_q,      exitdwm,        {0} },
-    { MODKEY|ShiftMask|ControlMask,	XK_Escape, quit,           {0} }, 
+    { MODKEY|ShiftMask|ControlMask, XK_q,      exitdwm,        {0} },
+    { MODKEY|ShiftMask|ControlMask, XK_Escape, quit,           {0} }, 
     { MODKEY|ShiftMask,             XK_Up,     spawn,          {.v = upvol   } },
     { MODKEY|ShiftMask,             XK_Down,   spawn,          {.v = downvol } },
-    { MODKEY|ShiftMask,		        XK_m,      spawn,		   {.v = mutevol } },
+    { MODKEY|ShiftMask,             XK_m,      spawn,		   {.v = mutevol } },
 };
 
 /* button definitions */
