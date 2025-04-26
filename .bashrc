@@ -11,12 +11,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
-export PATH="$PATH:/home/pressf/.local/bin"
-export PATH="$PATH:/home/pressf/packages/.pacman/bin"
-export PATH="$PATH:/home/pressf/packages/.pacman/sbin"
-export PATH="$PATH:/home/pressf/packages/.pacman/usr/bin"
-export PATH="$PATH:/home/pressf/packages/.pacman/usr/sbin"
-
 #Aliases
 alias cl="clear"
 alias off="deactivate"
