@@ -1,9 +1,12 @@
 [general]
 import = [
-    #change path
   "/home/user/.config/alacritty/themes/Ashes.dark.toml"
 ]
+[cursor]
+style = { shape = "Block", blinking = "Off" }
+    unfocused_hollow = true
+
 [keyboard]
 bindings = [
-  { key = "V", mods = "Alt", action = "ToggleViMode" }
+  { key = "V", mods = "Alt", action = "ToggleViMode" },
 ]
