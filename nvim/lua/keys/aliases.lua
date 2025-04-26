@@ -39,5 +39,5 @@
         bind_key("n", "<leader>fh", "<cmd>Telescope search_history<CR>", "Search through nvim search history")
         bind_key("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", "Search through nvim files with live grep")
         bind_key("n", "<leader>fk", "<cmd>Telescope keymaps<CR>", "Search through nvim keymaps (with descriptions)")
-        bind_key("n", "<leader>fo", "<cmd>SessionSearch<CR>", "Search through nvim sessions (using the auto-session plugin)")
+        bind_key("n", "<leader>fs", "<cmd>SessionSearch<CR>", "Search through nvim sessions (using the auto-session plugin)")
 
