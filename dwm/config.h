@@ -1,4 +1,8 @@
-/* See LICENSE file for copyright and license details. */
+
+#define TERMINAL "alacritty"
+#define TERMCLASS "Alacritty"
+#define BROWSER "librewolf"
+
 /* appearance */ 
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -11,7 +15,7 @@ static const char col_gray3[]       = "#c3c4c5";
 static const char col_gray4[]       = "#c3c4c5";
 static const char col_bgray[]	    = "#8093a1";
 static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=8";
+static const char dmenufont[]       = "monospace:size=10";
 
 static const char *colors[][3]      = {
     /*               fg         bg         border   */
@@ -63,21 +67,21 @@ static const Layout layouts[] = {
 { MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/usr/bin/alacritty", cmd, NULL } }
+#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 
 static const char *obs_studio[]        = { "obs", NULL };
-static const char *vifm[]              = { "vifm", NULL };
 static const char *steam[]             = { "steam", NULL };
 static const char *discordcmd[]        = { "discord", NULL };
 static const char *browsercmd[]        = { "librewolf", NULL };
-static const char *termcmd[]           = { "alacritty" , NULL };
+static const char *termcmd[]           = { TERMINAL , NULL };
+static const char *vifm[]              = { TERMINAL, "-e", "vifm" };
 static const char *flameshot[]         = { "flameshot", "gui", NULL };
 static const char *telegram[]          = { "telegram-desktop", NULL};
-static const char *upvol[]             = { "amixer", "set", "Master", "10%+", NULL };
-static const char *downvol[]           = { "amixer", "set", "Master", "10%-", NULL };
+static const char *upvol[]             = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+10%", NULL };
+static const char *downvol[]           = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-10%", NULL };
 static const char *mutevol[]           = { "pactl", "set-sink-mute", "@DEFAULT_SKINK@", "toggle", NULL };
 static const char *dmenucmd[]          = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_cyan, "-nf", col_bgray, "-sb", col_bgray, "-sf", col_cyan, NULL };
 
@@ -93,7 +97,7 @@ static const Key keys[] = {
     { MODKEY,                           XK_g,      incnmaster,      {.i = -1 } },
     { MODKEY,                           XK_h,      setmfact,        {.f = -0.05} },
     { MODKEY,                           XK_l,      setmfact,        {.f = +0.05} },
-    { MODKEY|ShiftMask,                 XK_v, 	   spawn,           {.v = vifm} }, 
+    { MODKEY|ShiftMask,                 XK_v, 	   spawn,           {.v = vifm } },
     { MODKEY|ShiftMask,                 XK_s, 	   spawn,			{.v = steam} }, 
     { MODKEY|ShiftMask,                 XK_t,	   spawn,			{.v = telegram} }, 
     { MODKEY,                           XK_r,      spawn,			{.v = termcmd } }, 
@@ -102,16 +106,16 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,                 XK_o, 	   spawn,			{.v = obs_studio} }, 
     { MODKEY|ShiftMask,                 XK_d,      spawn,			{.v = discordcmd } },
     { MODKEY|ShiftMask,                 XK_f,      spawn,			{.v = browsercmd } }, 
-    { MODKEY,                           XK_Return, zoom,			{0} },
-    { MODKEY,                           XK_Tab,    view,           	{0} },
-    { MODKEY,                           XK_w,      killclient,     	{0} },
     { MODKEY,                           XK_t,      setlayout,      	{.v = &layouts[0]} },
     { MODKEY,                           XK_f,      setlayout,      	{.v = &layouts[1]} },
     { MODKEY,                           XK_m,      setlayout,      	{.v = &layouts[2]} },
+    { MODKEY,                           XK_Return, zoom,			{0} },
+    { MODKEY,                           XK_Tab,    view,           	{0} },
     { MODKEY,                           XK_space,  setlayout,      	{0} },
+    { MODKEY,                           XK_w,      killclient,     	{0} },
     { MODKEY|ShiftMask,                 XK_space,  togglefloating, 	{0} },
-    { MODKEY,                           XK_0,      view,           	{.ui = ~0 } },
     { MODKEY|ShiftMask,                 XK_0,      tag,            	{.ui = ~0 } },
+    { MODKEY,                           XK_0,      view,           	{.ui = ~0 } },
     //	{ MODKEY,						XK_c,      setlayout,      	{.v = &layouts[3]} },
     //	{ MODKEY,                       XK_h,  	   focusmon,       	{.i = +1 } },
     // 	{ MODKEY,                       XK_l,  	   focusmon,       	{.i = -1 } },
@@ -136,7 +140,7 @@ static const Key keys[] = {
     { MODKEY|ShiftMask|ControlMask,	XK_Escape, quit,           {0} }, 
     { MODKEY|ShiftMask,             XK_Up,     spawn,          {.v = upvol   } },
     { MODKEY|ShiftMask,             XK_Down,   spawn,          {.v = downvol } },
-    { MODKEY|ShiftMask,		XK_m,      spawn,				   {.v = mutevol } },
+    { MODKEY|ShiftMask,		        XK_m,      spawn,		   {.v = mutevol } },
 };
 
 /* button definitions */
