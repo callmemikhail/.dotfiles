@@ -51,22 +51,45 @@ alias pacman-overwrite="sudo pacman -S --overwrite '*'"
 #Bindings
 if [[ $- == *i* ]]; then
     bind -x '"\C-r": "fh"'
-    bind -x '"\ec": "cd $(fzf --tmux --height 30% --walker=dir,hidden,follow)"'
-    bind -x '"\C-e": "fzf --preview '\''bat --color=always {}'\'' --no-sort --tmux --height 30% | xargs -r nvim"'
-    bind -x '"\C-g": fzf_rg_nvim'
-    fzf_rg_nvim() {
-        local selected
-        selected=$(rg --line-number --color=always --smart-case . | \
-            fzf --ansi \
-            --delimiter ':' \
-            --preview 'bat --color=always --highlight-line {2} {1}' \
-            --preview-window 'right,60%')
 
-        if [[ -n "$selected" ]]; then
-            local file line
-            file=$(echo "$selected" | awk -F: '{print $1}')
-            line=$(echo "$selected" | awk -F: '{print $2}')
-            nvim "+$line" "$file"
+    bind -x '"\ec": __fzf_cd_to_dir'
+    __fzf_cd_to_dir() {
+      local dir
+      dir=$(fzf --tmux --height 30% --walker=dir,hidden,follow)
+      if [[ -n "$dir" ]]; then
+        cd -- "$dir" && {
+          eval "$PROMPT_COMMAND"
+          printf "\033]0;%s\007" "${PWD##*/}"
+        } || echo "Failed to cd into $dir" >&2
+      fi
+    }
+    
+    bind -x '"\C-e": __fzf_open_file'
+    __fzf_open_file() {
+        local file
+        file=$(fzf --preview 'bat --color=always {}' --no-sort --tmux --height 30%)
+        if [[ -n "$file" ]]; then
+            nvim -- "$file"
         fi
     }
+
+    bind -x '"\C-g": fzf_rg_nvim'
+    fzf_rg_nvim() {
+        local selected arr
+        selected=$(rg --line-number --color=always -- . | \
+            fzf --ansi \
+            --delimiter ':' \
+            --nth 1,2,3 \
+            --preview 'bat --color=always --highlight-line {2} {1}')
+
+            if [[ -n "$selected" ]]; then
+                IFS=: read -ra arr <<< "$selected"
+                if (( ${#arr[@]} >= 2 )) && [[ -f "${arr[0]}" ]]; then
+                    nvim "+${arr[1]}" "${arr[0]}"
+                else
+                    echo "Invalid selection format" >&2
+                    return 1
+                fi
+            fi
+        }
 fi
