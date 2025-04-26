@@ -67,7 +67,7 @@ if [[ $- == *i* ]]; then
     bind -x '"\C-e": __fzf_open_file'
     __fzf_open_file() {
         local file
-        file=$(fzf --preview 'bat --color=always {}' --no-sort --tmux --height 30%)
+        file=$(fzf --preview 'bat --color=always {}' --no-sort --tmux --height 60%)
         if [[ -n "$file" ]]; then
             nvim -- "$file"
         fi
