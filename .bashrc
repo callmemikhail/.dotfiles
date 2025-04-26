@@ -53,4 +53,20 @@ if [[ $- == *i* ]]; then
     bind -x '"\C-r": "fh"'
     bind -x '"\ec": "cd $(fzf --tmux --height 30% --walker=dir,hidden,follow)"'
     bind -x '"\C-e": "fzf --preview '\''bat --color=always {}'\'' --no-sort --tmux --height 30% | xargs -r nvim"'
+    bind -x '"\C-g": fzf_rg_nvim'
+    fzf_rg_nvim() {
+        local selected
+        selected=$(rg --line-number --color=always --smart-case . | \
+            fzf --ansi \
+            --delimiter ':' \
+            --preview 'bat --color=always --highlight-line {2} {1}' \
+            --preview-window 'right,60%')
+
+        if [[ -n "$selected" ]]; then
+            local file line
+            file=$(echo "$selected" | awk -F: '{print $1}')
+            line=$(echo "$selected" | awk -F: '{print $2}')
+            nvim "+$line" "$file"
+        fi
+    }
 fi
