@@ -36,7 +36,7 @@ alias vf="vifm ."
 alias sudo="doas"
 alias proc="btop"
 alias cpy="xclip -selection clipboard"
-alias fh="history | LC_ALL=C awk '{\$1=\"\"; print substr(\$0,2)}' | fzf --tac --no-sort -i --tmux --height 30% | cpy"
+alias fh="history | LC_ALL=C awk '{\$1=\"\"; print substr(\$0,2)}' | command fzf --tac --no-sort -i --tmux --height 30% | cpy"
 
 alias l="ls"
 alias ll="ls -a"
