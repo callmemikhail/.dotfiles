@@ -10,10 +10,16 @@ WARNING: nvim conf not full!
 - [nvim](nvim)
 - [To do](#to-do)
 
-## tools
-- [Dwm](https://dwm.suckless.org/)
-- [Nvim](https://neovim.io/)
-- ...
+# tools
+- [alacritty](https://github.com/alacritty/alacritty)
+- [btop](https://github.com/aristocratos/btop)
+- [dmenu](https://tools.suckless.org/dmenu/)
+- [dwm](https://dwm.suckless.org/)
+- [nvim](https://neovim.io/)
+- [slstatus](https://tools.suckless.org/slstatus/)
+- [vifm](https://vifm.info/)
+- [vimium](https://github.com/philc/vimium)
+- [zathura](https://pwmt.org/projects/zathura/)
 
 ## to-do
 ```text
