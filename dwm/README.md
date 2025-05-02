@@ -2,6 +2,33 @@ dwm - dynamic window manager
 ============================
 dwm is an extremely fast, small, and dynamic window manager for X.
 
+## dwm config structure 
+```text
+├── config.h
+├── config.mk
+├── drw.c
+├── dwm
+├── exitdwm.c
+├── Makefile
+├── patches
+│   ├── dwm-alwayscenter-20200625-f04cac6.diff
+│   ├── dwm-attachbottom-6.3.diff
+│   ├── dwm-colorbar-6.2.diff
+│   ├── dwm-cool-autostart-6.2.diff
+│   ├── dwm-exitmenu-6.3.diff
+│   ├── dwm-movekeyboard-6.4.diff
+│   ├── dwm-noborder-6.2.diff
+│   ├── dwm-pertag-6.2.diff
+│   ├── dwm-preserveonrestart-6.3.diff
+│   ├── dwm-resizehere-20230824-e81f17d.diff
+│   ├── dwm-restartsig-20180523-6.2.diff
+│   ├── dwm-rotatestack-20161021-ab9571b.diff
+│   ├── dwm-steam-6.2.diff
+│   └── dwm-systray-20230922-9f88553.diff
+└── . 
+```
+
+
 
 Requirements
 ------------
