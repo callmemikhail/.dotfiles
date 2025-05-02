@@ -6,7 +6,7 @@ WARNING: nvim conf not full!
 ```
 
 ## content
-- [dwm](#dwm)
+- [dwm](dwm)
 - [nvim](nvim)
 - [To do](#to-do)
 
