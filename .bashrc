@@ -31,7 +31,8 @@ alias sudo="doas"
 alias proc="btop"
 alias cpy="xclip -selection clipboard"
 alias pst="xclip -o -selection clipboard"
-alias fh="history | LC_ALL=C awk '{\$1=\"\"; print substr(\$0,2)}' | command fzf --tac --no-sort -i --tmux --height 30% |  xargs -I{} xdotool type --clearmodifiers '{}'"
+alias fh='READLINE_LINE="$(history | awk '\''{$1=""; print substr($0,2)}'\'' | fzf --tac --no-sort -i --height 30%)"; READLINE_POINT=${#READLINE_LINE}'
+
 alias l="ls"
 alias ll="ls -a"
 alias lla="ls -allhrt"
