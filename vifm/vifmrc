@@ -125,9 +125,8 @@ mark m ~/pers/media/
 mark c ~/pers/coding/
 mark l ~/.local/share/
 mark b ~/pers/bookmarks/
-mark p ~/packages/.pacman/
-mark g ~/packages/git/projects
-mark d ~/packages/system/visual/dwm
+mark g ~/package/git/projects
+mark d ~/package/system/visual/dwm
 mark t ~/Downloads/Telegram\ Desktop
 mark s ~/.steam/steam/steamapps/common 
 

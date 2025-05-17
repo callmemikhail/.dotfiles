@@ -34,7 +34,7 @@ alias fh="history | LC_ALL=C awk '{\$1=\"\"; print substr(\$0,2)}' | command fzf
 
 alias l="ls"
 alias ll="ls -a"
-alias lla="ls -all"
+alias lla="ls -allhrt"
 alias du="sudo du -h --max-depth=1"
 
 alias fzf="fzf --preview 'bat --color=always {}'" 
