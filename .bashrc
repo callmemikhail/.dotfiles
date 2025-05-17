@@ -30,8 +30,8 @@ alias vf="vifm ."
 alias sudo="doas"
 alias proc="btop"
 alias cpy="xclip -selection clipboard"
-alias fh="history | LC_ALL=C awk '{\$1=\"\"; print substr(\$0,2)}' | command fzf --tac --no-sort -i --tmux --height 30% | cpy"
-
+alias pst="xclip -o -selection clipboard"
+alias fh="history | LC_ALL=C awk '{\$1=\"\"; print substr(\$0,2)}' | command fzf --tac --no-sort -i --tmux --height 30% |  xargs -I{} xdotool type --clearmodifiers '{}'"
 alias l="ls"
 alias ll="ls -a"
 alias lla="ls -allhrt"
@@ -46,7 +46,7 @@ alias pacman-overwrite="sudo pacman -S --overwrite '*'"
 if [[ $- == *i* ]]; then
     bind -x '"\C-r": "fh"'
 
-    bind -x '"\ec": __fzf_cd_to_dir'
+    bind -x '"\ec": __fzf_cd_to_dir '
     __fzf_cd_to_dir() {
       local dir
       dir=$(fzf --tmux --height 30% --walker=dir,hidden,follow)
