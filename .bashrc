@@ -47,7 +47,7 @@ alias pacman-overwrite="sudo pacman -S --overwrite '*'"
 if [[ $- == *i* ]]; then
     bind -x '"\C-r": "fh"'
 
-    bind -x '"\ec": __fzf_cd_to_dir '
+    bind -x '"\ec": __fzf_cd_to_dir'
     __fzf_cd_to_dir() {
       local dir
       dir=$(fzf --tmux --height 30% --walker=dir,hidden,follow)
@@ -57,6 +57,7 @@ if [[ $- == *i* ]]; then
           printf "\033]0;%s\007" "${PWD##*/}"
         } || echo "Failed to cd into $dir" >&2
       fi
+      pwd
     }
     
     bind -x '"\C-e": __fzf_open_file'
