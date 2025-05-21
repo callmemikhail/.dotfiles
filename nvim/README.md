@@ -1,7 +1,7 @@
 NVIM v0.11.1
 
---- Startup times for process: Embedded ---
-
+## Startup times for process
+``` text 
 times in msec
  clock   self+sourced   self:  sourced script
  clock   elapsed:              other lines
@@ -23,7 +23,7 @@ times in msec
 002.564  000.023: clear screen
 --sourcing && require
 027.388  000.079  000.008: sourcing nvim_exec2() called at 
-
+```
 
 
 ## nvim config stucture
