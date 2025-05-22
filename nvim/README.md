@@ -15,24 +15,29 @@ type  :help iccf<Enter>       for information
 
 ## nvim config stucture
 ```text
+.
 ├── init.lua
+├── lazy-lock.json
 ├── lua
-│   ├── core
-│   │   ├── filesettings.lua
-│   │   ├── general.lua
-│   │   └── vars.lua
-│   ├── custom
-│   │   ├── colorscheme
-│   │   │   ├── current.lua
-│   │   │   └── themes
-│   │   ├── init.lua
-│   │   └── plug
-│   │       ├── conf
-│   │       ├── plugconf.lua
-│   │       └── plugins.lua
-│   └── keys
-│       ├── aliases.lua
-│       └── modebindings.lua
-└── plugin
-    └── packer_compiled.lua
+│   ├── core
+│   │   ├── filesettings.lua
+│   │   ├── general.lua
+│   │   └── vars.lua
+│   ├── custom
+│   │   ├── init.lua
+│   │   └── plug
+│   │       ├── auto-session.lua
+│   │       ├── colorscheme-tindet-vim.lua
+│   │       ├── comment.lua
+│   │       ├── nerdtree.lua
+│   │       ├── telescope.lua
+│   │       ├── treesitter.lua
+│   │       ├── undotree.lua
+│   │       └── vim-move.lua
+│   └── keys
+│       ├── aliases.lua
+│       └── modebindings.lua
+└── README.md
+
+6 directories, 17 files
 ```

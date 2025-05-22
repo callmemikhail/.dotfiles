@@ -27,3 +27,8 @@ WARNING: nvim conf not full!
     nvim refactor custom/plug/plugins.lua 
     dwm change colors
 ```
+## other:
+```text
+   unset BROWSER                                       
+   xdg-settings set default-web-browser librewolf.desktop
+```

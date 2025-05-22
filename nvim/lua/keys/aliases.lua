@@ -1,8 +1,10 @@
 
 --[Key mapping]--
     vim.g.mapleader = " " -- changing leader key from \ to <Space>
+    vim.g.maplocalleader = "\\"
     opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
     --[General]--
+    bind_key("n", "<C-a>", "ggVG", "Highlight all text" )
     bind_key("n", "<Leader>Q", "<cmd>qa!<CR>", "Force full nvim exit")
 
     --[Moves]--
@@ -14,7 +16,6 @@
     
         --[Auto-Session]--
         bind_key("n", "<Leader>ws", "<cmd>SessionSave<CR>", "Session save")
-        bind_key("n", "<Leader>wr", "<cmd>SessionSearch<CR>", "Session save")
         bind_key("n", "<Leader>wa", "<cmd>SessionToggleAutoSave<CR>", "Session autotoggle")
         --[Nvim-Surround]--
         bind_key("v", "<C-y>s", "<cmd>'<,'> norm yss'", "surround selected area")
