@@ -1,18 +1,5 @@
 NVIM v0.11.1
 
-Nvim is open source and freely distributable
-https://neovim.io/#chat
-
-type  :help nvim<Enter>       if you are new!
-type  :checkhealth<Enter>     to optimize Nvim
-type  :q<Enter>               to exit
-type  :help<Enter>            for help
-
-type  :help news<Enter> to see changes in v0.11
-
-Help poor children in Uganda!
-type  :help iccf<Enter>       for information
-
 ## nvim config stucture
 ```text
 .
@@ -41,3 +28,28 @@ type  :help iccf<Enter>       for information
 
 6 directories, 17 files
 ```
+## Startup times for process
+``` text 
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.000  000.000: --- NVIM STARTING ---
+000.059  000.059: event init
+000.102  000.043: early init
+000.134  000.032: locale set
+000.156  000.023: init first window
+000.347  000.191: inits 1
+000.352  000.005: window checked
+000.376  000.023: parsing arguments
+001.143  000.270: init lua interpreter
+001.252  000.109: expanding arguments
+001.289  000.037: inits 2
+002.146  000.857: init highlight
+002.148  000.002: waiting for UI
+002.541  000.392: done waiting for UI
+002.564  000.023: clear screen
+--sourcing && require
+027.388  000.079  000.008: sourcing nvim_exec2() called at 
+```
+
