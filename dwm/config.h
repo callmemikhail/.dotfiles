@@ -74,12 +74,12 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 
 static const char *obs_studio[]        = { "obs", NULL };
 static const char *steam[]             = { "steam", NULL };
-static const char *discordcmd[]        = { "discord", NULL };
 static const char *browsercmd[]        = { BROWSER,  NULL };
 static const char *termcmd[]           = { TERMINAL , NULL };
+static const char *discordcmd[]        = { "discord", NULL };
+static const char *telegram[]          = { "Telegram", NULL };
 static const char *vifm[]              = { TERMINAL, "-e", "vifm" };
 static const char *flameshot[]         = { "flameshot", "gui", NULL };
-static const char *telegram[]          = { "telegram-desktop", NULL};
 static const char *upvol[]             = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+10%", NULL };
 static const char *downvol[]           = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-10%", NULL };
 static const char *mutevol[]           = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
