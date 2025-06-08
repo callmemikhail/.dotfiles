@@ -165,7 +165,7 @@ static const Button buttons[] = {
 
 // autostart
 static const char *const autostart[] = {
-    "telegram-desktop", NULL,
+    "Telegram", NULL,
     NULL
 };
 
