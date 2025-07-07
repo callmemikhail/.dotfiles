@@ -153,11 +153,11 @@ mark s ~/.steam/steam/steamapps/common
 
 command! run !! ./%f
 command! make !!make %a
+command! md :!mkdir -p %a
 command! cpy !cat %f | cpy
 command! diff nvim -d %f %F
 command! vgrep vim "+grep %a"
 command! zip zip -r %c.zip %f
-command! md :mkdir -p %a | cd %a
 command! df df -h %m 2> /dev/null
 command! reload :write | restart full
 command! metadata exiftool -g %f | less
