@@ -157,13 +157,13 @@ command! cpy !cat %f | cpy
 command! diff nvim -d %f %F
 command! vgrep vim "+grep %a"
 command! zip zip -r %c.zip %f
-command! md :mkdir %a | cd %a
+command! md :mkdir -p %a | cd %a
 command! df df -h %m 2> /dev/null
 command! reload :write | restart full
 command! metadata exiftool -g %f | less
-command! rimview ~/.config/vifm/scripts/nsxiv-copy.sh -d %d -t ..
 command! du du -h %m --max-depth=1 2> /dev/null
 command! fzf fzf --preview 'bat --color=always {}'
+command! rimview ~/.config/vifm/scripts/nsxiv-copy.sh -d %d -t ..
 command! icp !!xclip -selection clipboard -t image/$(echo %f | awk -F . '{print $NF}' | tr '[:upper:]' '[:lower:]') < %f
 
 " Mappings 
