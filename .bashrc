@@ -6,7 +6,7 @@ shopt -s autocd
 
 #Global virables
 export EDITOR="/usr/bin/nvim"
-
+export PATH="$HOME/.local/bin:$PATH"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -36,12 +36,12 @@ alias fh='READLINE_LINE="$(history | awk '\''{$1=""; print substr($0,2)}'\'' | f
 alias l="ls"
 alias ll="ls -a"
 alias lla="ls -allhrt"
-alias du="sudo du -h --max-depth=1"
+alias du="doas du -h --max-depth=1"
 
 alias fzf="fzf --preview 'bat --color=always {}'" 
 
-alias pacman-rewrite="sudo pacman -Rns --overwrite '*'"
-alias pacman-overwrite="sudo pacman -S --overwrite '*'"
+alias pacman-rewrite="doas pacman -Rns --overwrite '*'"
+alias pacman-overwrite="doas pacman -Suyy --overwrite '*'"
 
 #Bindings
 if [[ $- == *i* ]]; then
@@ -72,7 +72,7 @@ if [[ $- == *i* ]]; then
     bind -x '"\C-g": fzf_rg_nvim'
     fzf_rg_nvim() {
         local selected arr
-        selected=$(rg --line-number --color=always -- . | \
+        selected=$(rg --hidden --no-ignore --no-ignore-dot --no-ignore-global --line-number --color=always -- . | \
             fzf --ansi \
             --delimiter ':' \
             --nth 1,2,3 \
