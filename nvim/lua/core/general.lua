@@ -1,8 +1,10 @@
 --[General]--
 
+----[Help]----
+    o.helplang="ru" -- help language
 ----[Syntax]----
-	opt.syntax = 'enable'
-	o.termguicolors = true
+	opt.syntax = 'enable' -- syntax enable
+	o.termguicolors = true -- term color
 
 ----[Lines]----
 	opt.relativenumber = true -- relative numbers 	
