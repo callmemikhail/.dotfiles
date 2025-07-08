@@ -17,7 +17,7 @@ set encoding=utf-8
 execute pathogen#infect()
 "Тема
 set background=dark
-colorscheme iceberg
+" colorscheme iceberg
 "Отключение визуально-звуковых ув. 
 set t_vb
 set novisualbell 

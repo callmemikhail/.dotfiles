@@ -3,5 +3,5 @@
     require ("core.general")
         require ("core.filesettings")
     require ("keys.modebindings")
-	require ("keys.aliases")
-    require('custom')
+    require ("keys.aliases")
+    require("custom")

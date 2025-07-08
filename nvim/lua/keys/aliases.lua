@@ -15,8 +15,9 @@
     --[Plug key mapping]--
     
         --[Auto-Session]--
-        bind_key("n", "<Leader>ws", "<cmd>SessionSave<CR>", "Session save")
         bind_key("n", "<Leader>wa", "<cmd>SessionToggleAutoSave<CR>", "Session autotoggle")
+        bind_key('n', '<Leader>ws', ':execute "SessionSave " . expand("%:p")<CR>', "Save session with absolute file path")
+
         --[Nvim-Surround]--
         bind_key("v", "<C-y>s", "<cmd>'<,'> norm yss'", "surround selected area")
 
