@@ -5,6 +5,7 @@
     opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
     --[General]--
     bind_key("n", "<C-a>", "ggVG", "Highlight all text" )
+    bind_key("n", "<Esc>", "<cmd>nohl<CR>", "Clear highlighting" )
     bind_key("n", "<Leader>Q", "<cmd>qa!<CR>", "Force full nvim exit")
 
     --[Moves]--
