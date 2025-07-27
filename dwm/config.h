@@ -39,9 +39,9 @@ static const Rule rules[] = {
     /* class      instance    title       tags mask     isfloating   monitor */
     { "Steam",     NULL,	  NULL,       1 << 6,	    0, 		 -1 },
     { "steam",     NULL,	  NULL,       1 << 6,	    0, 		 -1 },
-    { "discord",   NULL,	  NULL,       1 << 7,	    0, 		 -1 },
+    { "discord",   NULL,	  NULL,       1 << 7,	    0, 		  1 },
     { "steamwebhelper",NULL,  NULL,       1 << 6,	    0, 		 -1 },
-    { "TelegramDesktop",NULL, NULL,       1 << 8,	    0, 		 -1 },
+    { "TelegramDesktop",NULL, NULL,       1 << 8,	    0, 		  1 },
 };
 
 /* layout(s) */
@@ -74,12 +74,12 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 
 static const char *obs_studio[]        = { "obs", NULL };
 static const char *steam[]             = { "steam", NULL };
+static const char *discordcmd[]        = { "discord", NULL };
 static const char *browsercmd[]        = { BROWSER,  NULL };
 static const char *termcmd[]           = { TERMINAL , NULL };
-static const char *discordcmd[]        = { "discord", NULL };
-static const char *telegram[]          = { "Telegram", NULL };
 static const char *vifm[]              = { TERMINAL, "-e", "vifm" };
 static const char *flameshot[]         = { "flameshot", "gui", NULL };
+static const char *telegram[]          = { "Telegram", NULL};
 static const char *upvol[]             = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+10%", NULL };
 static const char *downvol[]           = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-10%", NULL };
 static const char *mutevol[]           = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
@@ -87,8 +87,7 @@ static const char *dmenucmd[]          = { "dmenu_run", "-m", dmenumon, "-fn", d
 
 #include "exitdwm.c"
 static const Key keys[] = {
-    /* modifier                     key        function        argument */
-    { MODKEY,                           XK_b,      togglebar,       {0} }, 
+    /* modifier                     key        function        argument */ { MODKEY,                           XK_b,      togglebar,       {0} }, 
     { MODKEY|ShiftMask,                 XK_j,      rotatestack,     {.i = +1 } },
     { MODKEY|ShiftMask,                 XK_k,      rotatestack,     {.i = -1 } },
     { MODKEY,                           XK_j,      focusstack,      {.i = +1 } }, 
@@ -117,10 +116,10 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,                 XK_0,      tag,            	{.ui = ~0 } },
     { MODKEY,                           XK_0,      view,           	{.ui = ~0 } },
     //	{ MODKEY,						XK_c,      setlayout,      	{.v = &layouts[3]} },
-    //	{ MODKEY,                       XK_h,  	   focusmon,       	{.i = +1 } },
-    // 	{ MODKEY,                       XK_l,  	   focusmon,       	{.i = -1 } },
-    //	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         	{.i = +1 } },
-    //	{ MODKEY|ShiftMask,             XK_period, tagmon,         	{.i = -1 } },
+    { MODKEY|ShiftMask,                 XK_h,  	   focusmon,       	{.i = +1 } },
+    { MODKEY|ShiftMask,                 XK_l,  	   focusmon,       	{.i = -1 } },
+    { MODKEY|ShiftMask,                 XK_comma,  tagmon,         	{.i = +1 } },
+    { MODKEY|ShiftMask,                 XK_period, tagmon,         	{.i = -1 } },
     //	{ MODKEY|ShiftMask,				XK_b,      spawn,          SHCMD("xdotool type $(grep -v '^#' ~/.config/snippets | dmenu -i -l 50 | cut -d' ' -f1)") },
     //	{ MODKEY|ShiftMask,				XK_x,      spawn,          SHCMD("awk -i inplace -v rmv=\"$(grep -v '^#' ~/.config/snippets | dmenu -i -l 50 | cut -d' ' -f1)\" '!index($0,rmv)' ~/.config/snippets") },
     { MODKEY|ControlMask,			XK_l,		movekeyboard_x, {.i = 20}},
@@ -165,6 +164,7 @@ static const Button buttons[] = {
 
 // autostart
 static const char *const autostart[] = {
+    "/usr/local/bin/slstatus", NULL,
     "Telegram", NULL,
     NULL
 };
