@@ -28,3 +28,8 @@
 
 ----[Clipboard]----
     opt.clipboard = 'unnamedplus'
+
+----[Completion]----
+    o.pumheight = 6
+    opt.previewheight = 8
+    opt.completeopt = { "menuone", "noinsert", "popup", "fuzzy" }

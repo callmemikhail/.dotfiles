@@ -14,19 +14,16 @@
     bind_key("n", "<C-d>", "<C-d>zz", "scroll half slide down and move cursor to the mid")
 
     --[Plug key mapping]--
+        --[NerdTree]--
+        bind_key("n", "<C-n>", "<cmd>NERDTreeToggle<CR>", "Toggle nerdtree plug")
+        --[Floating_terminal]--
+        bind_key("n", "<leader>t", "<cmd>Floaterminal<CR>", "Toggle Floaterminal")
+        --[UndoTree]--
+        bind_key("n", "<leader>u", "<cmd>UndotreeToggle<CR>", "Toggle undotree plug")
     
         --[Auto-Session]--
         bind_key("n", "<Leader>wa", "<cmd>SessionToggleAutoSave<CR>", "Session autotoggle")
         bind_key('n', '<Leader>ws', ':execute "SessionSave " . expand("%:p")<CR>', "Save session with absolute file path")
-
-        --[Nvim-Surround]--
-        bind_key("v", "<C-y>s", "<cmd>'<,'> norm yss'", "surround selected area")
-
-        --[NerdTree]--
-        bind_key("n", "<C-n>", "<cmd>NERDTreeToggle <CR>", "toggle nerdtree plug")
-
-        --[UndoTree]--
-        bind_key("n", "<leader>u", "<cmd>UndotreeToggle <CR>", "toggle undotree plug")
 
         --[Vim-move plug]--
         g.move_key_modifier = "C"

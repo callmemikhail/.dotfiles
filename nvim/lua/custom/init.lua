@@ -1,6 +1,3 @@
--- [Filetype plug] --
-require("custom.ft_utils")
-
 -- [Colors-Loading]--
 cmd("colorscheme base16-classic-dark")
 
