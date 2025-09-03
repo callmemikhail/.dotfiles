@@ -1,33 +1,22 @@
 # dotfiles
-My configuration of dwm, nvim, slstatus, and dmenu is an ongoing attempt to achieve maximum comfort and productivity in my workflow.
+Linux system configuration based on the XORG graphics server.
+DWM is the main window manager, nvim is the editor.
 
-```text
-WARNING: nvim conf not full!
-```
+The file manager is vifm
+The docs/books reader is zathura
+The term emulator is alacritty
 
-## content
-- [dwm](dwm)
-- [nvim](nvim)
+## main content
+- [Bashrc file](.bashrc)
+- [Neovim configuration](nvim)
+- [dwm - dynamic window manager](dwm)
 - [To do](#to-do)
-
-# tools
-- [alacritty](https://github.com/alacritty/alacritty)
-- [btop](https://github.com/aristocratos/btop)
-- [dmenu](https://tools.suckless.org/dmenu/)
-- [dwm](https://dwm.suckless.org/)
-- [nvim](https://neovim.io/)
-- [slstatus](https://tools.suckless.org/slstatus/)
-- [vifm](https://vifm.info/)
-- [vimium](https://github.com/philc/vimium)
-- [zathura](https://pwmt.org/projects/zathura/)
 
 ## to-do
 ```text
-    nvim lsp setup 
-    nvim refactor custom/plug/plugins.lua 
-    dwm change colors
+    Cleaning and refactoring lsp manual setup
 ```
-## other:
+## default browser:
 ```text
    unset BROWSER                                       
    xdg-settings set default-web-browser librewolf.desktop

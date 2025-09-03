@@ -7,8 +7,12 @@ dwm is an extremely fast, small, and dynamic window manager for X.
 ├── config.h
 ├── config.mk
 ├── drw.c
-├── dwm
+├── drw.h
+├── dwm.1
+├── dwm.c
+├── dwm.png
 ├── exitdwm.c
+├── LICENSE
 ├── Makefile
 ├── patches
 │   ├── dwm-alwayscenter-20200625-f04cac6.diff
@@ -25,7 +29,10 @@ dwm is an extremely fast, small, and dynamic window manager for X.
 │   ├── dwm-rotatestack-20161021-ab9571b.diff
 │   ├── dwm-steam-6.2.diff
 │   └── dwm-systray-20230922-9f88553.diff
-└── . 
+├── README.md
+├── transient.c
+├── util.c
+└── util.h
 ```
 
 

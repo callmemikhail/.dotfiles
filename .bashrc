@@ -12,6 +12,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 #Aliases
+alias nx="nsxiv"
 alias cl="clear"
 alias off="deactivate"
 alias on="python3 -m venv ."
@@ -52,12 +53,9 @@ if [[ $- == *i* ]]; then
       local dir
       dir=$(fzf --tmux --height 30% --walker=dir,hidden,follow)
       if [[ -n "$dir" ]]; then
-        cd -- "$dir" && {
-          eval "$PROMPT_COMMAND"
-          printf "\033]0;%s\007" "${PWD##*/}"
-        } || echo "Failed to cd into $dir" >&2
+          cd -- "$dir" && echo "Current dir $(pwd)" \
+              || echo "Failed to cd into $dir" >&2
       fi
-      pwd
     }
     
     bind -x '"\C-e": __fzf_open_file'
