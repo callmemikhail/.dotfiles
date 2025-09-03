@@ -10,4 +10,3 @@ The term emulator is alacritty
 - [Bashrc file](.bashrc)
 - [Neovim configuration](nvim)
 - [dwm - dynamic window manager](dwm)
-- [To do](#to-do)
