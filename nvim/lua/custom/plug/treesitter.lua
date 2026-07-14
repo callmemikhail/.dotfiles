@@ -3,7 +3,7 @@ return {
     build = ':TSUpdate',
     lazy = false,
 
-    config = function()
+    callback = function()
         local configs = require("nvim-treesitter.configs")
         configs.setup({
             ensure_installed = {
