@@ -1,9 +1,10 @@
 --[Key mapping]--
-vim.g.mapleader = " " -- changing leader key from \ to <Space>
+vim.g.mapleader = " " -- changing leader key to space
 vim.g.maplocalleader = "\\"
 vim.opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
 
 --[General]--
+-- vim.keymap.set('i', '<Tab>', tab_complete, {expr = true})
 vim.keymap.set("n", "<C-a>", "ggVG", { desc = "Highlight all text" })
 vim.keymap.set("n", "<Esc>", "<cmd>nohl<CR>", { desc = "Clear highlighting" })
 vim.keymap.set("n", "<Leader>Q", "<cmd>qa!<CR>", { desc = "Force full nvim exit" })
@@ -19,6 +20,7 @@ vim.keymap.set("n", "<C-n>", "<cmd>NERDTreeToggle<CR>", { desc = "Toggle NerdTre
 
 --[Floating_terminal]--
 vim.keymap.set("n", "<leader>t", "<cmd>Floaterminal<CR>", { desc = "Toggle Floaterminal" })
+vim.keymap.set("t", "<Esc>", "<cmd>Floaterminal<CR>", { desc = "Toggle Floaterminal" })
 
 --[UndoTree]--
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>", { desc = "Toggle Undotree" })

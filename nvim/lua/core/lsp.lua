@@ -60,6 +60,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     local buf = ev.buf
     local bufopts = { buffer = buf, noremap = true, silent = true }
 
+    -- vim.lsp.completion.enable(true, client.id, ev.buf, {autotrigger = true})
     ---[Navigation]---
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
@@ -83,8 +84,25 @@ vim.api.nvim_create_autocmd("LspAttach", {
     if client and client:supports_method("textDocument/completion") then
       cmp_keymap("<C-j>", "next")
       cmp_keymap("<C-k>", "prev")
+      cmp_keymap("<Tab>", "complete")
 
       vim.api.nvim_buf_set_option(buf, "omnifunc", "v:lua.vim.lsp.omnifunc")
+      -- <CR>: перенос строки без подтверждения автодополнения
+      vim.keymap.set("i", "<CR>", function()
+        if vim.fn.pumvisible() == 1 then
+          return "<C-e><CR>"
+        end
+        return "<CR>"
+      end, { expr = true, silent = true, buffer = buf })
+
+      -- <S-CR>: подтверждение автодополнения + перенос строки
+      vim.keymap.set("i", "<C-CR>", function()
+        if vim.fn.pumvisible() == 1 then
+          return "<C-y>"
+        end
+        return "<CR>"
+      end, { expr = true, silent = true, buffer = buf })
+      -- самое ужасное что я мог придумать
 
       vim.api.nvim_create_autocmd("TextChangedI", {
         buffer = buf,

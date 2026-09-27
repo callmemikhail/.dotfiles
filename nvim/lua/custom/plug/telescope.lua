@@ -1,9 +1,11 @@
 return {
-    'nvim-telescope/telescope.nvim', 
-    version = '0.1.8',
-    dependencies = { 
-        'nvim-lua/plenary.nvim'
-    },
     lazy = true, 
     cmd = "Telescope",
+    
+    'nvim-telescope/telescope.nvim', version = '*',
+    dependencies = {
+        'nvim-lua/plenary.nvim',
+        -- optional but recommended
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    }
 }
